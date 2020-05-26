@@ -1,0 +1,63 @@
+{
+    "name": "hooks",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [
+        "react",
+        "react-dom",
+        "hooks",
+        "react-hooks"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "clean": "rimraf dist",
+        "build": "babel src --out-dir dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/echoghi/hooks.git"
+    },
+    "author": "Emile Choghi <emchoghi@gmail.com> (https://emilechoghi.com/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/echoghi/hooks/issues"
+    },
+    "homepage": "https://github.com/echoghi/hooks#readme",
+    "prettier": {
+        "trailingComma": "none",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "<rootDir>/tests/jest.setup.js"
+        ],
+        "testRegex": "test.js$",
+        "moduleDirectories": [
+            "./node_modules",
+            "./src"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "jsx"
+        ],
+        "transform": {
+            "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+        }
+    },
+    "devDependencies": {
+        "@babel/cli": "7.8.4",
+        "@babel/core": "7.9.6",
+        "@babel/preset-env": "7.9.6",
+        "@babel/preset-react": "7.9.4",
+        "@testing-library/jest-dom": "5.8.0",
+        "@testing-library/react": "10.0.4",
+        "babel-jest": "26.0.1",
+        "prettier": "2.0.5",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "rimraf": "3.0.2"
+    }
+}
