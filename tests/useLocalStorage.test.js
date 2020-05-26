@@ -17,8 +17,8 @@ function App() {
 
 afterEach(cleanup);
 
-describe('useWindowSize()', () => {
-    test('returns initial name', () => {
+describe('useLocalStorage()', () => {
+    test('returns key value', () => {
         const { getByTestId } = render(<App />);
 
         // initial value is returned
@@ -34,7 +34,7 @@ describe('useWindowSize()', () => {
             })
         );
 
-        // initial value is returned
+        // new value is returned
         expect(getByTestId('test-header')).toHaveTextContent(
             'Hi, my name is Hank'
         );
