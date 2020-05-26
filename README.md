@@ -23,7 +23,7 @@ yarn add @echoghi/hooks
 -   [Hooks](#hooks)
 
     -   [`useNetworkStatus()`](#useNetworkStatus)
-    -   [`useWindowScrollPosition()`](#usewindowscrollposition)
+    -   [`useWindowScrollPosition()`](#useWindowScrollPosition)
     -   [`useWindowSize()`](#useWindowSize)
     -   [`useLocalStorage()`](#useLocalStorage)
     -   [`useOnClickOutside()`](#useOnClickOutside)
