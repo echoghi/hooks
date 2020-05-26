@@ -12,7 +12,9 @@
     "scripts": {
         "test": "jest",
         "clean": "rimraf *js",
-        "build": "yarn clean && cross-env NODE_ENV=production  babel ./src --out-dir ."
+        "build": "yarn clean && cross-env NODE_ENV=production  babel ./src --out-dir .",
+        "prepare": "yarn build",
+        "deploy": "np"
     },
     "repository": {
         "type": "git",
