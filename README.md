@@ -152,7 +152,7 @@ const Example = () => {
 ## Inspiration
 
 -   [the-platform](https://github.com/jaredpalmer/the-platform)
--   [Gabe Ragland](https://usehooks.com/)
+-   [useHooks](https://github.com/gragland/usehooks)
 
 ---
 
