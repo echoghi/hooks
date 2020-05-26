@@ -12,7 +12,7 @@
     "scripts": {
         "test": "jest",
         "clean": "rimraf dist",
-        "build": "babel src --out-dir dist"
+        "build": "cross-env NODE_ENV=production npm run clean && babel ./src --out-dir ."
     },
     "repository": {
         "type": "git",
@@ -55,6 +55,7 @@
         "@testing-library/jest-dom": "5.8.0",
         "@testing-library/react": "10.0.4",
         "babel-jest": "26.0.1",
+        "cross-env": "7.0.2",
         "jest": "26.0.1",
         "np": "6.2.3",
         "prettier": "2.0.5",
