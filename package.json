@@ -11,7 +11,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "clean": "rimraf dist",
+        "clean": "rimraf index.js",
         "build": "cross-env NODE_ENV=production npm run clean && babel ./src --out-dir ."
     },
     "repository": {
