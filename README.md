@@ -156,4 +156,6 @@ const Example = () => {
 
 ---
 
+[![CircleCI](https://circleci.com/gh/echoghi/hooks.svg?style=svg)](https://circleci.com/gh/echoghi/hooks)
+
 MIT License
