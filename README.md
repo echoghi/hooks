@@ -1,6 +1,6 @@
 # Hooks
 
-A library of useful, curated hooks
+A library of useful hooks from across the [`web`](#inspiration).
 
 ## Install
 
