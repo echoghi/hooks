@@ -34,7 +34,8 @@
     },
     "jest": {
         "setupFilesAfterEnv": [
-            "<rootDir>/tests/jest.setup.js"
+            "<rootDir>/tests/jest.setup.js",
+            "<rootDir>/tests/localStorage.js"
         ],
         "testRegex": "test.js$",
         "moduleDirectories": [
