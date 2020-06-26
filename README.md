@@ -149,10 +149,37 @@ const Example = () => {
 };
 ```
 
+### `useMediaQuery()`
+
+Accepts a media query string then uses the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) API to determine if it matches with the current document.
+
+#### Arguments
+
+-   `string: media query string`:
+
+#### Example
+
+```js
+import { useMediaQuery } from '@echoghi/hooks';
+
+const Example = () => {
+  const isSmall = useMediaQuery('(max-width: 48rem)'); 
+  const isLarge = useMediaQuery('(min-width: 48rem)'); 
+  
+  return (
+   <Demo>
+     <p>Small view? {isSmall ? 'yes' : 'no'}</p>
+     <p>Large view? {isLarge ? 'yes' : 'no'}</p>
+   </Demo>
+  );
+};
+```
+
 ## Inspiration
 
 -   [the-platform](https://github.com/jaredpalmer/the-platform)
 -   [useHooks](https://github.com/gragland/usehooks)
+-   [beautiful-react-hooks](https://beautifulinteractions.github.io/beautiful-react-hooks/)
 
 ---
 

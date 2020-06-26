@@ -19,3 +19,13 @@ export function throttle(func, threshold = 250, scope) {
         }
     };
 }
+
+/**
+ * Exports a boolean value reporting whether the given API is supported or not
+ */
+export const isApiSupported = (api) => api in window;
+
+/**
+ * Exports a boolean value reporting whether is client side or server side by checking on the window object
+ */
+export const isClient = typeof window === 'object';
