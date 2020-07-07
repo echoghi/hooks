@@ -27,6 +27,7 @@ yarn add @echoghi/hooks
     -   [`useWindowSize()`](#useWindowSize)
     -   [`useLocalStorage()`](#useLocalStorage)
     -   [`useOnClickOutside()`](#useOnClickOutside)
+    -   [`useMediaQuery()`](#useMediaQuery)
 
 ## Hooks
 
@@ -163,15 +164,15 @@ Accepts a media query string then uses the [matchMedia](https://developer.mozill
 import { useMediaQuery } from '@echoghi/hooks';
 
 const Example = () => {
-  const isSmall = useMediaQuery('(max-width: 48rem)'); 
-  const isLarge = useMediaQuery('(min-width: 48rem)'); 
-  
-  return (
-   <Demo>
-     <p>Small view? {isSmall ? 'yes' : 'no'}</p>
-     <p>Large view? {isLarge ? 'yes' : 'no'}</p>
-   </Demo>
-  );
+    const isSmall = useMediaQuery('(max-width: 48rem)');
+    const isLarge = useMediaQuery('(min-width: 48rem)');
+
+    return (
+        <Demo>
+            <p>Small view? {isSmall ? 'yes' : 'no'}</p>
+            <p>Large view? {isLarge ? 'yes' : 'no'}</p>
+        </Demo>
+    );
 };
 ```
 
