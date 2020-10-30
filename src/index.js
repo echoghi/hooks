@@ -6,4 +6,5 @@ export * from './useNetworkStatus';
 export * from './useMediaQuery';
 export * from './usePrefersReducedMotion';
 export * from './useRandomInterval';
+export * from './useInterval';
 export * from './useTimeout';

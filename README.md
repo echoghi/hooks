@@ -30,6 +30,7 @@ yarn add @echoghi/hooks
     -   [`useMediaQuery()`](#useMediaQuery)
     -   [`usePrefersReducedMotion()`](#usePrefersReducedMotion)
     -   [`useRandomInterval()`](#useRandomInterval)
+    -   [`useInterval()`](#useInterval)
     -   [`useTimeout()`](#useTimeout)
 
 ## Hooks
@@ -181,7 +182,7 @@ const Example = () => {
 
 ### `usePrefersReducedMotion()`
 
-Accepts a media query string then uses the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) API to determine if it matches with the current document.
+A hook to allow access to the CSS media query `prefers-reduced-motion`.
 
 #### Example
 
@@ -226,9 +227,45 @@ function LaggyClock() {
 }
 ```
 
+### `useInterval()`
+
+A hook based on [Dan Abramov's blog post](https://overreacted.io/making-setinterval-declarative-with-react-hooks/) about `setInterval`.
+
+#### Arguments
+
+-   `callback: function`
+-   `delay: number`
+
+#### Example
+
+```js
+import { useInterval } from '@echoghi/hooks';
+
+function Example() {
+    let [count, setCount] = useState(0);
+    let [delay, setDelay] = useState(1000);
+
+    useInterval(() => {
+        // Your custom logic here
+        setCount(count + 1);
+    }, delay);
+
+    function handleDelayChange(e) {
+        setDelay(Number(e.target.value));
+    }
+
+    return (
+        <Demo>
+            {count}
+            <input value={delay} onChange={handleDelayChange} />
+        </Demo>
+    );
+}
+```
+
 ### `useTimeout()`
 
-A hook itended for animations and microinteractions that fire on a spontaneous interval. [More info here...](https://joshwcomeau.com/snippets/react-hooks/use-random-interval)
+A declarative adaptation of `setTimeout` based on [Dan Abramov's blog post](https://overreacted.io/making-setinterval-declarative-with-react-hooks/) about `setInterval`
 
 #### Arguments
 
