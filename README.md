@@ -28,6 +28,9 @@ yarn add @echoghi/hooks
     -   [`useLocalStorage()`](#useLocalStorage)
     -   [`useOnClickOutside()`](#useOnClickOutside)
     -   [`useMediaQuery()`](#useMediaQuery)
+    -   [`usePrefersReducedMotion()`](#usePrefersReducedMotion)
+    -   [`useRandomInterval()`](#useRandomInterval)
+    -   [`useTimeout()`](#useTimeout)
 
 ## Hooks
 
@@ -176,11 +179,83 @@ const Example = () => {
 };
 ```
 
-## Inspiration
+### `usePrefersReducedMotion()`
+
+Accepts a media query string then uses the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) API to determine if it matches with the current document.
+
+#### Example
+
+```js
+import { usePrefersReducedMotion } from '@echoghi/hooks';
+
+const Example = ({ isBig }) => {
+    const prefersReducedMotion = usePrefersReducedMotion();
+    const styles = {
+        transform: isBig ? 'scale(2)' : 'scale(1)',
+        transition: prefersReducedMotion ? undefined : 'transform 300ms'
+    };
+
+    return <Demo styles={styles}>Stuff</Demo>;
+};
+```
+
+### `useRandomInterval()`
+
+A hook itended for animations and microinteractions that fire on a spontaneous interval. [More info here...](https://joshwcomeau.com/snippets/react-hooks/use-random-interval)
+
+#### Arguments
+
+-   `callback: function`
+-   `minDelay?: number`
+-   `maxDelay?: number`
+
+#### Example
+
+```js
+import { useRandomInterval } from '@echoghi/hooks';
+
+function LaggyClock() {
+    // Update between every 1 and 4 seconds
+    const delay = [1000, 4000];
+
+    const [currentTime, setCurrentTime] = React.useState(Date.now);
+
+    useRandomInterval(() => setCurrentTime(Date.now()), ...delay);
+
+    return <>It is currently {new Date(currentTime).toString()}.</>;
+}
+```
+
+### `useTimeout()`
+
+A hook itended for animations and microinteractions that fire on a spontaneous interval. [More info here...](https://joshwcomeau.com/snippets/react-hooks/use-random-interval)
+
+#### Arguments
+
+-   `callback: function`
+-   `delay: number`
+
+#### Example
+
+```js
+import { useTimeout } from '@echoghi/hooks';
+
+function Example() {
+    const [message, setMessage] = useState('changing in 2 seconds...');
+
+    useTimeout(() => setMessage('changed!'), 2000);
+
+    return <Demo>{message}</Demo>;
+}
+```
+
+## Inspiration and sources
 
 -   [the-platform](https://github.com/jaredpalmer/the-platform)
 -   [useHooks](https://github.com/gragland/usehooks)
 -   [beautiful-react-hooks](https://beautifulinteractions.github.io/beautiful-react-hooks/)
+-   [overreacted.io](https://overreacted.io/making-setinterval-declarative-with-react-hooks/)
+-   [Josh Comeau](https://joshwcomeau.com/snippets/)
 
 ---
 
